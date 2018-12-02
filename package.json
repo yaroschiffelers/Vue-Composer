@@ -1,0 +1,41 @@
+{
+  "name": "vue-composer",
+  "version": "1.0.0",
+  "description": "Vue Composer",
+  "author": "Yaro Schiffelers",
+  "license": "MIT",
+  "main": "dist/vue-composer.umd.js",
+  "module": "dist/vue-composer.esm.js",
+  "unpkg": "dist/vue-composer.min.js",
+  "browser": {
+    "./sfc": "src/VueComposer.vue"
+  },
+  "scripts": {
+    "serve": "vue serve src/app.js",
+    "test": "test",
+    "build": "yarn build:umd & yarn build:es & yarn build:unpkg",
+    "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-composer.umd.js",
+    "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-composer.esm.js",
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-composer.min.js",
+    "prepublish": "yarn build",
+    "publish": "yarn prepublish & npm publish"
+  },
+  "devDependencies": {
+    "rollup": "^0.57.1",
+    "rollup-plugin-buble": "^0.19.2",
+    "rollup-plugin-vue": "^3.0.0",
+    "vue": "^2.5.16",
+    "vue-template-compiler": "^2.5.16"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaroschiffelers/vue-composer.git"
+  },
+  "keywords": [
+    "composer"
+  ],
+  "bugs": {
+    "url": "https://github.com/yaroschiffelers/vue-composer/issues"
+  },
+  "homepage": "https://github.com/yaroschiffelers/vue-composer#readme"
+}
