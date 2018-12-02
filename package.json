@@ -1,6 +1,6 @@
 {
   "name": "vue-composer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Vue Composer",
   "author": "Yaro Schiffelers",
   "license": "MIT",
@@ -16,9 +16,7 @@
     "build": "yarn build:umd & yarn build:es & yarn build:unpkg",
     "build:umd": "rollup --config build/rollup.config.js --format umd --file dist/vue-composer.umd.js",
     "build:es": "rollup --config build/rollup.config.js --format es --file dist/vue-composer.esm.js",
-    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-composer.min.js",
-    "prepublish": "yarn build",
-    "publish": "yarn prepublish & npm publish"
+    "build:unpkg": "rollup --config build/rollup.config.js --format iife --file dist/vue-composer.min.js"
   },
   "devDependencies": {
     "rollup": "^0.57.1",
